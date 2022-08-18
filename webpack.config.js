@@ -16,7 +16,30 @@ const config = {
   },
 
   module: {
-    rules: [{ test: /\.(ts|js)x?$/, loader: 'babel-loader', exclude: /node_modules/ }],
+    rules: [
+        {
+            test: /\.(ts|js)x?$/,
+            loader: 'babel-loader',
+            exclude: /node_modules/
+        },
+        {
+            test: /\.css$/,
+            use: [
+                'style-loader',
+                {
+                    loader: 'css-loader',
+                    options: {
+                        importLoaders: 1,
+                        modules: true
+                    }
+                }
+            ]
+        },
+        {
+            test: /\.svg$/,
+            use: "file-loader",
+        },
+    ],
   },
 
   plugins: [
