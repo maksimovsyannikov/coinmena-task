@@ -1,0 +1,21 @@
+.wrapper {
+    display: flex;
+}
+
+.content {
+    margin: 120px;
+    background-color: white;
+    width: 100%;
+}
+
+.header {
+    height: 100px;
+    display: flex;
+    border-bottom: 2px solid #E0E6F1;
+}
+
+.menu {
+    width: 300px;
+    border-right: 2px solid #E0E6F1;
+    height: 100%;
+}

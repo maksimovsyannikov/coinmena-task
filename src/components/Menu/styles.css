@@ -1,0 +1,20 @@
+.wrapper {
+    margin-left: 40px;
+    padding-top: 40px;
+}
+
+.title {
+    color: #AEB7C6;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin-top: 38px;
+}
+
+.item + .item {
+    margin-top: 20px;;
+}
