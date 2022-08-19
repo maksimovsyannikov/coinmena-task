@@ -16,7 +16,7 @@ const actionsCreators = {
     showAuthPopup: (): Actions['showAuthPopup'] => (
         { type: constants.SHOW_AUTH_POPUP }
     ),
-    hideAuthPopup: (): Actions['showAuthPopup'] => (
+    hideAuthPopup: (): Actions['hideAuthPopup'] => (
         { type: constants.HIDE_AUTH_POPUP }
     ),
     logout: (): Actions['logout'] => (
@@ -26,4 +26,5 @@ const actionsCreators = {
 
 export {
     actionsCreators,
+    Actions,
 };
