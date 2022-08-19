@@ -34,6 +34,15 @@ const rootReducer = (state: IState = defaultState, action: RootAction) => {
                     authPopupVisible: false,
                 },
             };
+        case constants.SET_USER:
+            return {
+                ...state,
+                user: {
+                    authenticated: true,
+                    name: action.payload.name,
+                    login: action.payload.login,
+                },
+            };
         case constants.LOGOUT:
             return {
                 ...state,
