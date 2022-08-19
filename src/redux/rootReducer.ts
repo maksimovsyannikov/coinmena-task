@@ -5,6 +5,9 @@ const defaultState: IState = {
         authenticated: false,
         login: '',
         name: '',
+    },
+    ui: {
+        authPopupVisible: false,
     }
 }
 

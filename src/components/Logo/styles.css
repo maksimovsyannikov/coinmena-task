@@ -1,12 +1,11 @@
-.logo {
+.wrapper {
     display: flex;
-    width: 300px;
     font-size: 32px;
-    border-right: 2px solid #E0E6F1;
     align-items: center;
     text-transform: uppercase;
+    height: 100%;
 }
 
-.logo span {
+.wrapper span {
     margin-left: 40px;
 }

@@ -3,7 +3,7 @@ import React from "react";
 
 export const Logo = () => {
     return (
-        <div className={styles.logo}>
+        <div className={styles.wrapper}>
             <span>stockup</span>
         </div>
     );

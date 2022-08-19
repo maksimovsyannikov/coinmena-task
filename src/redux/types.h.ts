@@ -4,6 +4,9 @@ interface IState {
         login: string;
         name: string;
     };
+    ui: {
+        authPopupVisible: false;
+    }
 }
 
 export { IState };
