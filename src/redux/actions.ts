@@ -1,4 +1,4 @@
-import {constants} from './constants';
+import { constants } from './constants';
 
 type Actions = {
     showAuthPopup: {
@@ -21,7 +21,7 @@ const actionsCreators = {
     ),
     logout: (): Actions['logout'] => (
         { type: constants.LOGOUT }
-    )
+    ),
 };
 
 export {

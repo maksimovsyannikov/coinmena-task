@@ -1,4 +1,4 @@
-import { IState } from "./types.h";
+import { IState } from './types.h';
 
 const defaultState: IState = {
     user: {
@@ -8,8 +8,8 @@ const defaultState: IState = {
     },
     ui: {
         authPopupVisible: false,
-    }
-}
+    },
+};
 
 type Action = {
     type: string,
@@ -21,6 +21,6 @@ const rootReducer = (state: IState = defaultState, action: Action) => {
         default:
             return state;
     }
-}
+};
 
 export { rootReducer };

@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './styles.css';
-import { Logo } from '../Logo'
-import { Menu } from '../Menu'
-import { Routes, Route } from "react-router-dom";
-import { Home } from "../pages/Home";
-import { Trade } from "../pages/Trade";
-import { AuthButton } from "../AuthButton";
+import { Logo } from '../Logo';
+import { Menu } from '../Menu';
+import { Routes, Route } from 'react-router-dom';
+import { Home } from '../pages/Home';
+import { Trade } from '../pages/Trade';
+import { AuthButton } from '../AuthButton';
 
 export const Layout = () => {
     return (
@@ -38,4 +38,4 @@ export const Layout = () => {
             </div>
         </div>
     );
-}
+};

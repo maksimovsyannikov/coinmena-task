@@ -1,8 +1,8 @@
-import React from "react";
-import styles from "./styles.css";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styles from './styles.css';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
-import { useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom';
 
 type MenuItem = {
     link: string;
@@ -17,7 +17,7 @@ const menuItems: MenuItem[] = [
     {
         link: '/trade',
         name: 'Trade',
-    }
+    },
 ];
 
 export const Menu = () => {
@@ -29,13 +29,13 @@ export const Menu = () => {
             <span className={styles.title}>main menu</span>
             <ul className={styles.list}>
                 {menuItems.map(
-                    (item) => (
-                        <li className={cx({item: true, active: location.pathname === item.link})} key={item.link}>
+                    (item) =>
+                        <li className={cx({ item: true, active: location.pathname === item.link })} key={item.link}>
                             <Link to={item.link}>{item.name}</Link>
                         </li>
-                    )
+
                 )}
             </ul>
         </div>
-    )
-}
+    );
+};

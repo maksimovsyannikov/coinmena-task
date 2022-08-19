@@ -1,5 +1,5 @@
-import styles from "./styles.css";
-import React from "react";
+import styles from './styles.css';
+import React from 'react';
 
 export const Logo = () => {
     return (
@@ -7,4 +7,4 @@ export const Logo = () => {
             <span>stockup</span>
         </div>
     );
-}
+};
