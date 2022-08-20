@@ -2,7 +2,7 @@ const users: Array<{login: string, password: string, name: string}> = [
     {
         login: 'admin',
         password: '000000',
-        name: 'Barly Vallentido',
+        name: 'Barly Vallentito',
     },
 ];
 

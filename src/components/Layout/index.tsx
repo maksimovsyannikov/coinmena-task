@@ -1,14 +1,15 @@
 import React from 'react';
 import styles from './styles.css';
-import { Logo } from '../Logo';
+import { Logo } from '../Header/Logo';
 import { Menu } from '../Menu';
 import { Routes, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Home } from '../pages/Home';
 import { Trade } from '../pages/Trade';
-import { AuthButton } from '../AuthButton';
+import { AuthButton } from '../Header/AuthButton';
 import { uiSelectors } from '../../redux/selectors';
 import { AuthPopup } from '../AuthPopup';
+import { UserInfo } from '../Header/UserInfo';
 
 export const Layout: React.FC = () => {
     const authPopupVisible = useSelector(uiSelectors.authPopupVisible);
@@ -22,7 +23,9 @@ export const Layout: React.FC = () => {
                             <Logo />
                         </div>
                         <div className={styles.topBar}>
-                            <div className={styles.userInfo}></div>
+                            <div className={styles.userInfo}>
+                                <UserInfo />
+                            </div>
                             <div className={styles.authButton}>
                                 <AuthButton />
                             </div>

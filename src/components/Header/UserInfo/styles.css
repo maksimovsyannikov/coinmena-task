@@ -1,0 +1,18 @@
+.wrapper p {
+    margin: 0;
+    padding: 0;
+    margin-left: 50px;
+}
+
+.firstLine {
+    font-size: 22px;
+}
+
+.secondLine {
+    color: #AEB7C6;
+    font-size: 18px;
+}
+
+.firstLine + .secondLine {
+    margin-top: 8px;
+}

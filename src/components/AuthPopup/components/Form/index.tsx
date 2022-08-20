@@ -10,6 +10,7 @@ export const Form: React.FC = () => {
     const dispatch = useDispatch();
 
     const handleSubmit = () => {
+        // @ts-ignore
         dispatch(actionsCreators.login(login, password));
     };
 
