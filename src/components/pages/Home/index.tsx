@@ -4,12 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { assetsSelectors } from '../../../redux/selectors';
 import { actionsCreators } from '../../../redux/actions';
 import classNames from 'classnames/bind';
+import { Arrow } from './Arrow';
 
 const cx = classNames.bind(styles);
 
 export const Home: React.FC = () => {
     const dispatch = useDispatch();
     const assets = useSelector(assetsSelectors.assets);
+    const sortingField = useSelector(assetsSelectors.sortingField);
+    const sortingOrder = useSelector(assetsSelectors.sortingOrder);
 
     useEffect(() => {
         dispatch(actionsCreators.clearAssets());
@@ -23,10 +26,23 @@ export const Home: React.FC = () => {
     }
 
     const handleLoadMoreClick = () => {
-        // todo reset sorting
+        // eslint-disable-next-line
         // @ts-ignore
         dispatch(actionsCreators.loadAssets());
-    }
+        dispatch(actionsCreators.resetSorting());
+    };
+
+    const handleSortClick = (field: 'name' | 'price') => {
+        switch (sortingOrder) {
+            case 'none':
+            case 'desc':
+                dispatch(actionsCreators.setSorting({ field, order: 'asc' }));
+                break;
+            case 'asc':
+                dispatch(actionsCreators.setSorting({ field, order: 'desc' }));
+                break;
+        }
+    };
 
     return (
         <div className={styles.wrapper}>
@@ -34,11 +50,13 @@ export const Home: React.FC = () => {
                 Assets
             </div>
             <div className={cx('row', 'header')}>
-                <div className={cx('col', 'headerCol')}>
+                <div className={cx('col', 'headerCol', 'withHover')} onClick={() => handleSortClick('name')}>
                     Coin Name
+                    {sortingField === 'name' && <Arrow direction={sortingOrder}/>}
                 </div>
-                <div className={cx('col', 'headerCol')}>
+                <div className={cx('col', 'headerCol', 'withHover')} onClick={() => handleSortClick('price')}>
                     Price
+                    {sortingField === 'price' && <Arrow direction={sortingOrder}/>}
                 </div>
                 <div className={cx('col', 'headerCol')}>
                     Action

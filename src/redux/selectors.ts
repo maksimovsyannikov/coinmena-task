@@ -1,4 +1,4 @@
-import { IAsset, IState } from './types.h';
+import { IState } from './types.h';
 
 const userSelectors = {
     isAuthenticated: (state: IState): boolean => state.user.authenticated,
@@ -10,8 +10,10 @@ const uiSelectors = {
 };
 
 const assetsSelectors = {
-    getPageToLoad: (state: IState): number => state.assets.page,
-    assets: (state: IState): IAsset[] => state.assets.items,
+    getPageToLoad: (state: IState) => state.assets.page,
+    assets: (state: IState) => state.assets.items,
+    sortingField: (state: IState) => state.assets.sorting.field,
+    sortingOrder: (state: IState) => state.assets.sorting.order,
 };
 
 export { userSelectors, uiSelectors, assetsSelectors };

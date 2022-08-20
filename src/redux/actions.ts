@@ -30,6 +30,16 @@ type Actions = {
     }
     clearAssets: {
         type: constants.CLEAR_ASSETS;
+    },
+    setSorting: {
+        type: constants.SET_SORTING;
+        payload: {
+            field: 'name' | 'price',
+            order: 'asc' | 'desc'
+        },
+    }
+    resetSorting: {
+        type: constants.RESET_SORTING;
     }
 };
 
@@ -51,6 +61,12 @@ const actionsCreators = {
     ),
     clearAssets: (): Actions['clearAssets'] => (
         { type: constants.CLEAR_ASSETS }
+    ),
+    resetSorting: (): Actions['resetSorting'] => (
+        { type: constants.RESET_SORTING }
+    ),
+    setSorting: (payload: {field: 'name' | 'price', order: 'asc' | 'desc'}): Actions['setSorting'] => (
+        { type: constants.SET_SORTING, payload }
     ),
     login: (login: string, password: string) => (dispatch: Dispatch) => {
         loginRequest(login, password).then((loginResult) => {

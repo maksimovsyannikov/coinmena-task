@@ -35,6 +35,15 @@
     height: 60px;
 }
 
+.withHover {
+    cursor: pointer;
+}
+
+.withHover:hover {
+    cursor: pointer;
+    color: #808080;
+}
+
 .listCol {
     color: black;
     font-size: 22px;
