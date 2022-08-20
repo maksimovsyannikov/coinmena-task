@@ -10,6 +10,10 @@ interface IState {
     assets: {
         page: number;
         items: IAsset[];
+        sorting: {
+            field: 'name' | 'price' | 'none',
+            order: 'asc' | 'desc' | 'none',
+        }
     }
 }
 

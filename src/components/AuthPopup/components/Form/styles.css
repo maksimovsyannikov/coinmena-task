@@ -41,7 +41,7 @@
 
 .wrapper input[type="submit"] {
     border: none;
-    background-color: #3ca9e2;
+    background-color: #1552F0;
     color: #fff;
     font-weight: bold;
     text-transform: uppercase;
@@ -52,6 +52,6 @@
 }
 
 .wrapper input[type="submit"]:hover {
-    background-color: #329dd5;
+    background-color: #0000ff;
     transition: all 0.2s ease;
 }

@@ -22,6 +22,12 @@ export const Home: React.FC = () => {
         return null;
     }
 
+    const handleLoadMoreClick = () => {
+        // todo reset sorting
+        // @ts-ignore
+        dispatch(actionsCreators.loadAssets());
+    }
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.title}>
@@ -52,6 +58,9 @@ export const Home: React.FC = () => {
                         </div>
                     </div>
                 )}
+            </div>
+            <div className={styles.loadMore}>
+                <button onClick={handleLoadMoreClick}>Load more</button>
             </div>
         </div>
     );

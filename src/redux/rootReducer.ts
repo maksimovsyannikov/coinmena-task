@@ -14,6 +14,10 @@ const defaultState: IState = {
     assets: {
         page: 1,
         items: [],
+        sorting: {
+            field: 'none',
+            order: 'none',
+        },
         // items: [
         //     {
         //         id: '1e31218a-e44e-4285-820c-8282ee222035',

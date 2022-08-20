@@ -51,3 +51,26 @@
     font-weight: 100;
     font-size: 22px;
 }
+
+.loadMore {
+    justify-content: space-evenly;
+    display: flex;
+    margin-top: 40px;
+}
+
+.loadMore button {
+    background: #1552F0;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.loadMore button:hover {
+    background-color: #0000ff;
+    transition: all 0.2s ease;
+}
