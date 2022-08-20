@@ -10,6 +10,7 @@ export const Form: React.FC = () => {
     const dispatch = useDispatch();
 
     const handleSubmit = () => {
+        // eslint-disable-next-line
         // @ts-ignore
         dispatch(actionsCreators.login(login, password));
     };

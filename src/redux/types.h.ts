@@ -5,8 +5,19 @@ interface IState {
         name: string;
     };
     ui: {
-        authPopupVisible: false;
+        authPopupVisible: boolean;
+    },
+    assets: {
+        page: number;
+        items: IAsset[];
     }
 }
 
-export { IState };
+interface IAsset {
+    id: string;
+    name: string,
+    shortName: string,
+    priceInUsd: number,
+}
+
+export { IState, IAsset };

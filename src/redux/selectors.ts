@@ -1,4 +1,4 @@
-import { IState } from './types.h';
+import { IAsset, IState } from './types.h';
 
 const userSelectors = {
     isAuthenticated: (state: IState): boolean => state.user.authenticated,
@@ -9,4 +9,9 @@ const uiSelectors = {
     authPopupVisible: (state: IState): boolean => state.ui.authPopupVisible,
 };
 
-export { userSelectors, uiSelectors };
+const assetsSelectors = {
+    getPageToLoad: (state: IState): number => state.assets.page,
+    assets: (state: IState): IAsset[] => state.assets.items,
+};
+
+export { userSelectors, uiSelectors, assetsSelectors };

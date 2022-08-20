@@ -1,6 +1,9 @@
 import { Dispatch } from 'redux';
-import { login as loginRequest } from '../services/Api';
+import { loadAssets as loadAssetsRequest, login as loginRequest } from '../services/Api';
 import { constants } from './constants';
+import { IAsset } from './types.h';
+import store from './store';
+import { assetsSelectors } from './selectors';
 
 type SetUserPayload = {
     login: string,
@@ -21,6 +24,13 @@ type Actions = {
     logout: {
         type: constants.LOGOUT;
     }
+    setAssets: {
+        type: constants.SET_ASSETS;
+        payload: IAsset[]
+    }
+    clearAssets: {
+        type: constants.CLEAR_ASSETS;
+    }
 };
 
 const actionsCreators = {
@@ -36,6 +46,12 @@ const actionsCreators = {
     logout: (): Actions['logout'] => (
         { type: constants.LOGOUT }
     ),
+    setAssets: (payload: IAsset[]): Actions['setAssets'] => (
+        { type: constants.SET_ASSETS, payload }
+    ),
+    clearAssets: (): Actions['clearAssets'] => (
+        { type: constants.CLEAR_ASSETS }
+    ),
     login: (login: string, password: string) => (dispatch: Dispatch) => {
         loginRequest(login, password).then((loginResult) => {
             if (loginResult.success) {
@@ -45,8 +61,22 @@ const actionsCreators = {
                 }));
                 dispatch(actionsCreators.hideAuthPopup());
             } else {
-                alert('todo handle error');
+                // eslint-disable-next-line
+                alert('login error');
             }
+        });
+    },
+    loadAssets: () => (dispatch: Dispatch) => {
+        const pageToLoad = assetsSelectors.getPageToLoad(store.getState());
+
+        loadAssetsRequest(pageToLoad)
+            .then((payload) => {
+                dispatch(actionsCreators.setAssets(payload));
+            }).catch((error) => {
+                // eslint-disable-next-line
+                alert('assets load error');
+                // eslint-disable-next-line
+                console.log(error);
         });
     },
 };

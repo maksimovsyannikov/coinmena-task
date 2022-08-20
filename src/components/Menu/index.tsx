@@ -20,8 +20,9 @@ const menuItems: MenuItem[] = [
     },
 ];
 
+const cx = classNames.bind(styles);
+
 export const Menu: React.FC = () => {
-    const cx = classNames.bind(styles);
     const location = useLocation();
 
     return (

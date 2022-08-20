@@ -17,8 +17,17 @@
 .menu, .logo {
     flex-shrink: 0;
     width: 300px;
-    border-right: 2px solid #E0E6F1;
     height: 100%;
+}
+
+.logo {
+    border-right: 2px solid #E0E6F1;
+}
+
+.divider {
+    width: 2px;
+    height: 100%;
+    background-color: #E0E6F1;
 }
 
 .page {
@@ -29,6 +38,7 @@
     background-color: #FAFBFC;
     padding: 50px;
     width: 100%;
+    border-left: 2px solid #E0E6F1;
 }
 
 .topBar {
