@@ -2,7 +2,7 @@
 
 ## Test user
 ```
-admin  
+admin@gmail.com 
 000000
 ```
 
