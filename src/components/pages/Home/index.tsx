@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from './styles.css';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { assetsSelectors } from '../../../redux/selectors';
 import { actionsCreators } from '../../../redux/actions';
 import classNames from 'classnames/bind';
@@ -10,6 +11,7 @@ const cx = classNames.bind(styles);
 
 export const Home: React.FC = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const assets = useSelector(assetsSelectors.assets);
     const sortingField = useSelector(assetsSelectors.sortingField);
     const sortingOrder = useSelector(assetsSelectors.sortingOrder);
@@ -30,6 +32,11 @@ export const Home: React.FC = () => {
         // @ts-ignore
         dispatch(actionsCreators.loadAssets());
         dispatch(actionsCreators.resetSorting());
+    };
+
+    const openTradePage = (assetId: string) => {
+        dispatch(actionsCreators.setAssetFromId(assetId));
+        navigate('/trade');
     };
 
     const handleSortClick = (field: 'name' | 'price') => {
@@ -72,7 +79,7 @@ export const Home: React.FC = () => {
                             ${asset.priceInUsd.toFixed(2)}
                         </div>
                         <div className={cx('col', 'listCol')}>
-                            action
+                            <button onClick={(() => openTradePage(asset.id))}>trade</button>
                         </div>
                     </div>
                 )}

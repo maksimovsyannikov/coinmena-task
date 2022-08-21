@@ -81,6 +81,10 @@ const defaultState: IState = {
         //     },
         // ],
     },
+    trade: {
+        assetFromId: '',
+        assetToId: '',
+    },
 };
 
 type RootAction = Actions[keyof Actions];
@@ -172,6 +176,22 @@ const rootReducer = (state: IState = defaultState, action: RootAction): IState =
                 },
             };
         }
+        case constants.SET_ASSET_FROM_ID:
+            return {
+                ...state,
+                trade: {
+                    ...state.trade,
+                    assetFromId: action.payload,
+                },
+            };
+        case constants.SET_ASSET_TO_ID:
+            return {
+                ...state,
+                trade: {
+                    ...state.trade,
+                    assetToId: action.payload,
+                },
+            };
         default:
             return state;
     }

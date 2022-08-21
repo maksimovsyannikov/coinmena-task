@@ -7,6 +7,8 @@ const enum constants {
     CLEAR_ASSETS = 'assets/clear',
     SET_SORTING = 'assets/sorting/set',
     RESET_SORTING = 'assets/sorting/reset',
+    SET_ASSET_FROM_ID = 'assets/set/from',
+    SET_ASSET_TO_ID = 'assets/set/to',
 }
 
 export { constants };

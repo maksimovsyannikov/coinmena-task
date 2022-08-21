@@ -16,4 +16,17 @@ const assetsSelectors = {
     sortingOrder: (state: IState) => state.assets.sorting.order,
 };
 
-export { userSelectors, uiSelectors, assetsSelectors };
+const tradeSelectors = {
+    assetFromId: (state: IState) => state.trade.assetFromId,
+    assetToId: (state: IState) => state.trade.assetToId,
+    selectedAssetFromPriceInUsd: (state: IState) => {
+        const asset = state.assets.items.find((asset) => asset.id === state.trade.assetFromId);
+        return asset ? asset.priceInUsd : undefined;
+    },
+    selectedAssetToPriceInUsd: (state: IState) => {
+        const asset = state.assets.items.find((asset) => asset.id === state.trade.assetToId);
+        return asset ? asset.priceInUsd : undefined;
+    },
+};
+
+export { userSelectors, uiSelectors, assetsSelectors, tradeSelectors };

@@ -40,7 +40,15 @@ type Actions = {
     }
     resetSorting: {
         type: constants.RESET_SORTING;
-    }
+    },
+    setAssetFromId: {
+        type: constants.SET_ASSET_FROM_ID;
+        payload: string;
+    },
+    setAssetToId: {
+        type: constants.SET_ASSET_TO_ID;
+        payload: string;
+    },
 };
 
 const actionsCreators = {
@@ -67,6 +75,12 @@ const actionsCreators = {
     ),
     setSorting: (payload: {field: 'name' | 'price', order: 'asc' | 'desc'}): Actions['setSorting'] => (
         { type: constants.SET_SORTING, payload }
+    ),
+    setAssetFromId: (payload: string): Actions['setAssetFromId'] => (
+        { type: constants.SET_ASSET_FROM_ID, payload }
+    ),
+    setAssetToId: (payload: string): Actions['setAssetToId'] => (
+        { type: constants.SET_ASSET_TO_ID, payload }
     ),
     login: (email: string, password: string) => (dispatch: Dispatch) => {
         loginRequest(email, password).then((loginResult) => {

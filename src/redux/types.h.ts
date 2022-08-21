@@ -15,6 +15,10 @@ interface IState {
             order: 'asc' | 'desc' | 'none',
         }
     }
+    trade: {
+        assetFromId: string;
+        assetToId: string;
+    }
 }
 
 interface IAsset {
