@@ -30,7 +30,7 @@
     border-radius: 4px;
 }
 
-.wrapper input[type="text"], .wrapper input[type="password"] {
+.wrapper input[type="email"], .wrapper input[type="password"] {
     width: 100%;
     padding: 0 0 0 10px;
     margin: 0 0 24px 0;

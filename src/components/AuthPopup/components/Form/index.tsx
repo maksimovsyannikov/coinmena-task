@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { actionsCreators } from '../../../../redux/actions';
 
 export const Form: React.FC = () => {
-    const [login, setLogin] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
 
     const dispatch = useDispatch();
@@ -12,11 +12,11 @@ export const Form: React.FC = () => {
     const handleSubmit = () => {
         // eslint-disable-next-line
         // @ts-ignore
-        dispatch(actionsCreators.login(login, password));
+        dispatch(actionsCreators.login(email, password));
     };
 
-    const handleChangeLogin = (event: ChangeEvent<HTMLInputElement>) => {
-        setLogin(event.target.value);
+    const handleChangeEmail = (event: ChangeEvent<HTMLInputElement>) => {
+        setEmail(event.target.value);
     };
 
     const handleChangePassword = (event: ChangeEvent<HTMLInputElement>) => {
@@ -28,8 +28,8 @@ export const Form: React.FC = () => {
             <h2>Login</h2>
             <form onSubmit={handleSubmit}>
                 <input
-                    type="text" name="username" value={login} onChange={handleChangeLogin}
-                    placeholder="Username" required
+                    type="email" name="email" value={email} onChange={handleChangeEmail}
+                    placeholder="Email" required
                 />
                 <input
                     type="password" name="username" value={password} onChange={handleChangePassword}

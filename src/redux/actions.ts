@@ -6,7 +6,7 @@ import store from './store';
 import { assetsSelectors } from './selectors';
 
 type SetUserPayload = {
-    login: string,
+    email: string,
     name: string
 };
 
@@ -68,11 +68,11 @@ const actionsCreators = {
     setSorting: (payload: {field: 'name' | 'price', order: 'asc' | 'desc'}): Actions['setSorting'] => (
         { type: constants.SET_SORTING, payload }
     ),
-    login: (login: string, password: string) => (dispatch: Dispatch) => {
-        loginRequest(login, password).then((loginResult) => {
+    login: (email: string, password: string) => (dispatch: Dispatch) => {
+        loginRequest(email, password).then((loginResult) => {
             if (loginResult.success) {
                 dispatch(actionsCreators.setUser({
-                    login: loginResult.login as string,
+                    email: loginResult.email as string,
                     name: loginResult.name as string,
                 }));
                 dispatch(actionsCreators.hideAuthPopup());

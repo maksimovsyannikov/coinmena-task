@@ -1,8 +1,8 @@
 import { IAsset } from '../redux/types.h';
 
-const users: Array<{login: string, password: string, name: string}> = [
+const users: Array<{email: string, password: string, name: string}> = [
     {
-        login: 'admin',
+        email: 'admin@gmail.com',
         password: '000000',
         name: 'Barly Vallentito',
     },
@@ -11,7 +11,7 @@ const users: Array<{login: string, password: string, name: string}> = [
 type LoginResult = {
     success: boolean,
     name?: string,
-    login?: string
+    email?: string
 }
 
 type LoadAssetsResponse = {
@@ -29,16 +29,16 @@ type LoadAssetsResponse = {
 
 const ASSETS_PER_PAGE = 10;
 
-const login = (login: string, password: string): Promise<LoginResult> => {
+const login = (email: string, password: string): Promise<LoginResult> => {
     return new Promise((resolve) => {
         let isValid = false;
         for (const user of users) {
-            if (user.login === login && user.password === password) {
+            if (user.email === email && user.password === password) {
                 isValid = true;
                 resolve({
                     success: true,
                     name: user.name,
-                    login: login,
+                    email: email,
                 });
             }
         }

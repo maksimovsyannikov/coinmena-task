@@ -5,7 +5,7 @@ import { constants } from './constants';
 const defaultState: IState = {
     user: {
         authenticated: false,
-        login: '',
+        email: '',
         name: '',
     },
     ui: {
@@ -109,7 +109,7 @@ const rootReducer = (state: IState = defaultState, action: RootAction): IState =
                 user: {
                     authenticated: true,
                     name: action.payload.name,
-                    login: action.payload.login,
+                    email: action.payload.email,
                 },
             };
         case constants.LOGOUT:

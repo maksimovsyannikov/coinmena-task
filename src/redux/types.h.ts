@@ -1,7 +1,7 @@
 interface IState {
     user: {
         authenticated: boolean;
-        login: string;
+        email: string;
         name: string;
     };
     ui: {
